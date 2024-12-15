@@ -21,7 +21,7 @@ public class FrmAnggota extends javax.swing.JFrame {
         kosongkanForm();
     }
     
-      public void kosongkanForm(){
+    public void kosongkanForm(){
         txtIdAnggota.setText("0");
         txtNama.setText("");
         txtAlamat.setText("");

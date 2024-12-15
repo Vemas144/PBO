@@ -35,34 +35,64 @@ public class TestBackend {
 //       System.out.println("Nama: " + k.getNama() + ", Ket: " + k.getKeterangan());
 //        }
        
-        Anggota ang1 = new Anggota("Yanto", "jln.kenangan", "029826353");
-        Anggota ang2 = new Anggota("Sanju", "jln.cinta", "987643233");
-        Anggota ang3 = new Anggota("Mawar", "jln.yuk sama aku", "1234566576");
-        // test insert
-        ang1.save();
-        ang2.save();
-        ang3.save();
+//        Anggota ang1 = new Anggota("Yanto", "jln.kenangan", "029826353");
+//       Anggota ang2 = new Anggota("Sanju", "jln.cinta", "987643233");
+//        Anggota ang3 = new Anggota("Mawar", "jln.yuk sama aku", "1234566576");
+//        // test insert
+//        ang1.save();
+//        ang2.save();
+//        ang3.save();
 
         // test update
-        ang2.setAlamat("jln.aja dulu");
-        ang2.save();
+//        ang2.setAlamat("jln.aja dulu");
+//        ang2.save();
 
         // test delete
-        ang3.delete();
+//        ang3.delete();
 
         // test select all
-        for(Anggota a : new Anggota().getAll())
-        {
-        System.out.println("Nama: " + a.getNama() + ", Alamat: " + a.getAlamat() 
-                + ", Telepon: " + a.getTelepon());
-        }
+ //       for(Anggota a : new Anggota().getAll())
+ //       {
+ //       System.out.println("Nama: " + a.getNama() + ", Alamat: " + a.getAlamat() 
+//                + ", Telepon: " + a.getTelepon());
+//        }
 
         // test search
-        for(Anggota a : new Anggota().search("Yanto"))
-        {
-        System.out.println("Nama: " + a.getNama() + ", Alamat: " + a.getAlamat() 
-                + ", Telepon: " + a.getTelepon());
-        }
+//        for(Anggota a : new Anggota().search("Yanto"))
+//        {
+//        System.out.println("Nama: " + a.getNama() + ", Alamat: " + a.getAlamat() 
+ //               + ", Telepon: " + a.getTelepon());
+ //       }
 
-    }
+ Kategori novel = new Kategori().getById(1);
+ Kategori referensi = new Kategori().getById(2);
+
+ Buku buku1 = new Buku(novel, "Timun Mas", "Elex Media", "Bang Supit");
+ Buku buku2 = new Buku(referensi, "Metode Linier", "Springer", "Alex Baldwin");
+ Buku buku3 = new Buku(novel, "Bintang Terang", "Erlangga", "Mat Sewoot");
+
+ // test insert
+ buku1.save();
+ buku2.save();
+
+ // test update
+ buku2.setJudul("Aljabar Linier");
+ buku2.save();
+
+ // test delete
+ buku3.delete();
+
+ // test select all
+ for(Buku b : new Buku().getAll())
+ {
+ System.out.println("Kategori: " + b.getkategori().getNama() + ", Judul: " + b.getJudul());
+ }
+
+ // test search
+ for(Buku b : new Buku().search("timun"))
+ {
+ System.out.println("Kategori: " + b.getkategori().getNama() + ", Judul: " + b.getJudul());
+ }
+
+   }
 }

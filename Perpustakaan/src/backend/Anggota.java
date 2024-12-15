@@ -57,6 +57,10 @@ public class Anggota {
         this.telepon = telepon;
     }
     
+    public String toString(){
+        return nama;
+    }
+    
     public Anggota getById(int id){
         Anggota ang = new Anggota();
         ResultSet rs = DBHelper.selectQuery("SELECT * FROM anggota " 

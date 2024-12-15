@@ -35,7 +35,7 @@ public class FrmKategori extends javax.swing.JFrame {
         tblKategori.setModel(new DefaultTableModel(new Object[][] {}, kolom));
         
         for(Kategori kat : list){
-            rowData[0] = kat.getIdKategori();
+            rowData[0] = kat.getidKategori();
             rowData[1] = kat.getNama();
             rowData[2] = kat.getKeterangan();
             
@@ -51,7 +51,7 @@ public class FrmKategori extends javax.swing.JFrame {
         tblKategori.setModel(new DefaultTableModel(new Object[][] {}, kolom));
         
         for(Kategori kat : list){
-            rowData[0] = kat.getIdKategori();
+            rowData[0] = kat.getidKategori();
             rowData[1] = kat.getNama();
             rowData[2] = kat.getKeterangan();
             
@@ -199,7 +199,7 @@ public class FrmKategori extends javax.swing.JFrame {
                                     .addComponent(txtKeterangan, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
                                     .addComponent(txtNama))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -237,7 +237,7 @@ public class FrmKategori extends javax.swing.JFrame {
                     .addComponent(btnCari))
                 .addGap(15, 15, 15)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         pack();
@@ -258,11 +258,11 @@ public class FrmKategori extends javax.swing.JFrame {
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
         Kategori kat = new Kategori();
-        kat.setIdKategori(Integer.parseInt(txtIdKategori.getText()));
+        kat.setidKategori(Integer.parseInt(txtIdKategori.getText()));
         kat.setNama(txtNama.getText());
         kat.setKeterangan(txtKeterangan.getText());
         kat.save();
-        txtIdKategori.setText(Integer.toString(kat.getIdKategori()));
+        txtIdKategori.setText(Integer.toString(kat.getidKategori()));
         tampilData();
     }//GEN-LAST:event_btnSimpanActionPerformed
 

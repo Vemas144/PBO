@@ -23,11 +23,11 @@ public class Kategori {
         this.keterangan = keterangan;
     }
 
-    public int getIdKategori() {
+    public int getidKategori() {
         return idKategori;
     }
 
-    public void setIdKategori(int idKategori) {
+    public void setidKategori(int idKategori) {
         this.idKategori = idKategori;
     }
 
@@ -47,6 +47,10 @@ public class Kategori {
         this.keterangan = keterangan;
     }
     
+    public String toString(){
+        return nama;
+    }
+    
     public Kategori getById(int id){
         Kategori kat = new Kategori();
         ResultSet rs = DBHelper.selectQuery("SELECT * FROM kategori " 
@@ -55,7 +59,7 @@ public class Kategori {
         try {
             while(rs.next()){
                 kat = new Kategori();
-                kat.setIdKategori(rs.getInt("idkategori"));
+                kat.setidKategori(rs.getInt("idkategori"));
                 kat.setNama(rs.getString("nama"));
                 kat.setKeterangan(rs.getString("keterangan"));
             }
@@ -73,7 +77,7 @@ public class Kategori {
         try {
             while(rs.next()){
                 Kategori kat = new Kategori();
-                kat.setIdKategori(rs.getInt("idKategori"));
+                kat.setidKategori(rs.getInt("idKategori"));
                 kat.setNama(rs.getString("nama"));
                 kat.setKeterangan(rs.getString("keterangan"));
                 
@@ -98,7 +102,7 @@ public class Kategori {
           try {
             while(rs.next()){
                 Kategori kat = new Kategori();
-                kat.setIdKategori(rs.getInt("idKategori"));
+                kat.setidKategori(rs.getInt("idKategori"));
                 kat.setNama(rs.getString("nama"));
                 kat.setKeterangan(rs.getString("keterangan"));
                 
@@ -112,7 +116,7 @@ public class Kategori {
     }
     
     public void save() {
-        if (getById(idKategori).getIdKategori() == 0) {
+        if (getById(idKategori).getidKategori() == 0) {
             String SQL = "INSERT INTO kategori (nama, keterangan) VALUES("
                     + " '" + this.nama + "', "
                     + " '" + this.keterangan + "' " + " )";

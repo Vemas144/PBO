@@ -90,5 +90,10 @@ public static ResultSet selectQuery(String query)
     }
     return rs;
     }
+
+    static void executeUpdate(String updateQuery) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
 
